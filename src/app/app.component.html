@@ -1,4 +1,4 @@
-The basic:
+<h2>The basic:</h2>
 
 <p>Div, or blocks can have width and height. If it has width, remaining right space is taken by margin</p>
 <div style="width: 100px; height: 100px; background: #8BBBFF; padding: 10px; margin: 10px;">block</div>
@@ -8,6 +8,38 @@ The basic:
 <p>Inline blocks behave like inlines, but can also have width&height and top/bottom margin</p>
 <div style="display: inline-block; width: 100px; height: 100px; background: #8BBBFF; padding: 10px; margin: 10px;">Inline Block</div>
 
+<hr>
+<h2>Floats:</h2>
+<p>Basic flow of display:block elements are top to bottom.</p>
+<p>display: float; will allow us to take the element out of this flow, and position left or right.</p>
+<p>Floats must have width</p>
+<p>Next block element's background will fill the space and its contents will wrap around the floated element</p>
+<p>float: none; will turn element go back into the flow</p>
+<div class="menu" style="height: 10px;
+  background-color: #B2D6FF; "></div>
+<div class="sidebar" style="height: 30px;
+  background-color: rgba(176,133,160, 0.5); float: left; width: 30px;"></div>
+<div class="content" style=" height: 50px;
+  background-color: rgba(95,210,122,0.5);; ">content content content content content content content content content content content </div>
+<div class="footer" style="height: 20px;
+  background-color: #D6E9FE; "></div>
+<div></div>
+
+<h2>Horizontal Aligning</h2>
+<p>Inline items:</p>
+<p>text-align: center. <-- this aligns content and inlines inside a block</p>
+<div style="text-align: center; background: #8BBBFF;">
+	<span>text-align: center</span>  aligns content and inlines inside a block
+</div>
+
+<p>Block items:</p>
+<p>To center align, we can set left & right margin to auto.</p>
+<p>Remember, a block with width takes all the margin on the right to create a block</p>
+<p>when we set left & right margin to 'auto' it will center the block in its parent.</p>
+<div></div>
+<div style="width: 100px; height: 100px; background: #8BBBFF; padding: 10px; margin: 0 auto;">block</div>
+<p>We can float left/right to left/right align block elements</p>
+<p>We can also use Flexbox to align block elements however we want</p>
 
 <h2>Flex List Boxes</h2>
 <ul class="flex-container">
