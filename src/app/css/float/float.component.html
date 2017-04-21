@@ -1,0 +1,135 @@
+
+<h2>Floats:</h2>
+<p>Basic flow of display:block elements are top to bottom.</p>
+<p>display: float; will allow us to take the element out of this flow, and position left or right.</p>
+<p>Floats must have width</p>
+<p>Next block element's background will fill the space and its contents will wrap around the floated element</p>
+<p>float: none; will turn element go back into the flow</p>
+<div class="float-parent" style="width: 60%; margin: 0 auto;">
+	<div class="menu" style="height: 30px;
+  background-color: #B2D6FF; "></div>
+	<div class="sidebar" style="height: 100px;
+  background-color: rgba(176,133,160, 0.5); float: left; width: 100px;">
+		<div class="sidebar-inner" style="height: 50px;
+  background-color: rgba(222,64,34,0.5); float: right; width: 50px;">
+
+		</div>
+	</div>
+	<div class="content" style=" height: 150px;
+  background-color: rgba(95,210,122,0.5);; ">content content content content content content content content content content content. Notice how the content wraps around the floated item even though element itself takes replaces the floated space entirely
+	</div>
+	<div class="footer" style="height: 60px;
+  background-color: #D6E9FE; "></div>
+</div>
+<p>Notice the float element does not break out of the parent container and aligns to the left most side of it. We can nest floated elements like this.</p>
+<p>If you want to stack more items horizontally, have them float left too</p>
+<div class="float-parent" style="width: 60%; margin: 0 auto; border: 1px red solid">
+	<div class="menu" style="height: 30px;
+  background-color: #B2D6FF; "></div>
+	<div class="sidebar" style="height: 100px;
+  background-color: rgba(176,133,160, 0.5); float: left; width: 100px;">
+		<div class="sidebar-inner" style="height: 50px;
+  background-color: rgba(222,64,34,0.5); float: right; width: 50px;">
+
+		</div>
+	</div>
+	<div class="content" style=" height: 150px; float: left;
+  background-color: rgba(95,210,122,0.5);; ">Content: Now I'm floating too
+	</div>
+	<div class="footer" style="height: 60px;
+  background-color: #D6E9FE; "></div>
+	<p>However, since both 'sidebar' and 'content' are taken out of the flow, the next normal elements (footer) take place after the 'menu'. Remember, floated elements DO NOT add to the height of normal flow.</p>
+</div>
+
+<p style="clear: both">Clearing Floats:</p>
+<p>Adding clear: float will force the element to treat previous floats as blocks</p>
+<div class="float-parent" style="width: 60%; margin: 0 auto; border: 1px red solid">
+	<div class="menu" style="height: 30px;
+  background-color: #B2D6FF; "></div>
+	<div class="sidebar" style="height: 100px;
+  background-color: rgba(176,133,160, 0.5); float: left; width: 100px;">
+		<div class="sidebar-inner" style="height: 50px;
+  background-color: rgba(222,64,34,0.5); float: right; width: 50px;">
+
+		</div>
+	</div>
+	<div class="content" style=" height: 150px; float: left;
+  background-color: rgba(95,210,122,0.5);; ">Content: Now I'm floating too
+	</div>
+	<div class="footer" style="height: 60px; clear: both;
+  background-color: #D6E9FE; ">Clearing left will clear left floating elements only. Right will only clear right floats. Usually we want both. Also, clearing will also add the height of the floated elements back into the flow
+	</div>
+</div>
+
+<p>Also, additional floated elements will <b>move down</b> if there aren't enough width spaces</p>
+<div class="float-parent" style="width: 60%; margin: 0 auto; border: 1px red solid">
+	<div class="menu" style="height: 30px;
+  background-color: #B2D6FF; "></div>
+	<div class="sidebar" style="height: 100px;
+  background-color: rgba(176,133,160, 0.5); float: left; width: 100px;">
+		<div class="sidebar-inner" style="height: 50px;
+  background-color: rgba(222,64,34,0.5); float: right; width: 50px;">
+
+		</div>
+	</div>
+	<div class="content" style=" height: 150px; float: left; width: 92%;
+  background-color: rgba(95,210,122,0.5); ">Content: Now I'm floating too
+	</div>
+	<div class="footer" style="height: 60px; clear: both;
+  background-color: #D6E9FE; ">Clearing left will clear left floating elements only. Right will only clear right floats. Usually we want both. Also, clearing will also add the height of the floated elements back into the flow
+	</div>
+</div>
+
+<p>What if a container only has floats? Here, we take the menu and the footer out of the float container, leaving only the floats</p>
+<p>As you can see, the float container now has no heights</p>
+<div class="menu" style="height: 30px;
+  background-color: #B2D6FF; "></div>
+<div class="float-parent" style="width: 60%; margin: 0 auto; border: 1px red solid;">
+	<div class="sidebar" style="height: 100px; background-color: rgba(176,133,160, 0.5); float: left; width: 100px;"></div>
+	<div class="content" style=" height: 150px; float: left; background-color: rgba(95,210,122,0.5); ">Content: Now I'm floating too
+	</div>
+</div>
+<div class="footer" style="height: 60px; clear: both; background-color: #D6E9FE; "></div>
+
+<p>We can fix this by adding 'overflow': 'hidden' on the float container.</p>
+<p>overflow : hidden -- controls the content. With floats, it tells the container to consider the float heights</p>
+<p>overflow can do more. It basically controls the content in the fixed height container. Consider texts spilling over the container. Overflow 'visible' will show the text beyond the container, 'hidden' will hide the text, 'scroll' will create a scroll, and 'auto' will created a scroll if needed '</p>
+<div class="menu" style="height: 30px;
+  background-color: #B2D6FF; "></div>
+<div class="float-parent" style="width: 60%; margin: 0 auto; border: 1px red solid; overflow: hidden;">
+	<div class="sidebar" style="height: 100px; background-color: rgba(176,133,160, 0.5); float: left; width: 100px;"></div>
+	<div class="content" style=" height: 150px; float: left; background-color: rgba(95,210,122,0.5); ">Content: Now I'm floating too
+	</div>
+</div>
+<div class="footer" style="height: 60px; clear: both; background-color: #D6E9FE; "></div>
+
+<p>Additional Float + overflow combo</p>
+<p>Below we see floated img, and content wrapping on the right.</p>
+<p>with 'overflow: hidden' on the content, it fixes the horizontal alignment because it takes float's width into account</p>
+<div class='column' style="width: 400px; background-color: #D6E9FE; float: left; margin: 0 20px;">
+	<div class='avatar' style="float: left;
+  width: 60px;
+  height: 60px;
+  margin: 25px;
+  border-radius: 40px;
+  background-color: #D6E9FE;"></div>
+	<h3 class='username' style="margin-top: 30px;">Bob Smith</h3>
+	<p class='comment' style="  margin: 10px;
+  overflow: hidden; ">Aptent vel egestas vestibulum aliquam ullamcorper volutpat
+					  ullamcorper pharetra hac posuere a rhoncus purus molestie torquent. Scelerisque
+					  purus cursus dictum ornare a phasellus. A augue venenatis adipiscing.</p>
+</div>
+
+<div class='column' style="width: 400px; background-color: #D6E9FE; float: left;">
+	<div class='avatar' style="float: left;
+  width: 60px;
+  height: 60px;
+  margin: 25px;
+  border-radius: 40px;
+  background-color: #D6E9FE;"></div>
+	<h3 class='username' style="margin-top: 30px;">Bob Smith</h3>
+	<p class='comment' style="  margin: 10px;
+  ">Aptent vel egestas vestibulum aliquam ullamcorper volutpat
+	ullamcorper pharetra hac posuere a rhoncus purus molestie torquent. Scelerisque
+	purus cursus dictum ornare a phasellus. A augue venenatis adipiscing.</p>
+</div>
