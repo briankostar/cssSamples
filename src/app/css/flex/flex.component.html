@@ -1,4 +1,4 @@
-<p>Flexbox gives us complete control over the alignment, direction, order and size of our boxes</p>
+<!--<p>Flexbox gives us complete control over the alignment, direction, order and size of our boxes</p>-->
 
 <!--<div class="section1">-->
 <!--<h2>Flex List Boxes</h2>-->
@@ -21,17 +21,251 @@
 
 <!--</div>-->
 
-<p>Flex Containers: define how children are positioned</p>
-<p>Flex Items: any direct child of flex container. Mainly to let the container know how to keep position</p>
+<p>Flex Containers: Defines how <b>direct</b> children are positioned</p>
+<p>Flex Items: Any direct child of flex container. Mainly to let the container know how to keep position</p>
+<br>
 
+<h2>Containers:</h2>
 <pre>display : flex</pre>
-<p>enables flex mode on a container</p>
+<p>enables flex mode on a container</p><br>
 
+
+
+
+
+<h2>Flex Horizontal Align: Justify-content </h2>
+
+<pre>justify-content: flex-start</pre>
+<div class='menu-container' style="">
+	<div class='menu' style="justify-content: flex-start">
+		<div class='date'>April 21, 2017</div>
+		<div class='signup'>Sign Up</div>
+		<div class='login'>Login</div>
+	</div>
+</div>
+<pre>justify-content: center</pre>
 <div class='menu-container'>
-	<div class='menu'>
-		<div class='date'>Aug 14, 2016</div>
+	<div class='menu' style="justify-content: center">
+		<div class='date'>April 21, 2017</div>
+		<div class='signup'>Sign Up</div>
+		<div class='login'>Login</div>
+	</div>
+</div>
+<pre>justify-content: flex-end</pre>
+<div class='menu-container'>
+	<div class='menu' style="justify-content: flex-end">
+		<div class='date'>April 21, 2017</div>
+		<div class='signup'>Sign Up</div>
+		<div class='login'>Login</div>
+	</div>
+</div>
+<pre>justify-content: space-around </pre>
+<div class='menu-container'>
+	<div class='menu' style="justify-content: space-around">
+		<div class='date'>April 21, 2017</div>
+		<div class='signup'>Sign Up</div>
+		<div class='login'>Login</div>
+	</div>
+</div>
+<pre>justify-content: space-between</pre>
+<div class='menu-container'>
+	<div class='menu' style="justify-content: space-between">
+		<div class='date'>April 21, 2017</div>
 		<div class='signup'>Sign Up</div>
 		<div class='login'>Login</div>
 	</div>
 </div>
 
+<br>
+<h3>Flex containers only cares about direct children. Use this to group elements appropriately</h3>
+<div class='menu-container'>
+	<div class='menu' style="justify-content: space-between">
+		<div class='date'>April 21, 2017</div>
+		<div class="links">
+			<div class='signup'>Sign Up</div>
+			<div class='login'>Login</div>
+		</div>
+	</div>
+</div>
+
+<h2>Flex Vertical Align: Align-items</h2>
+<pre>align-items: flex-start</pre>
+<div class='header-container'>
+	<div class='header' style="align-items: flex-start;">
+		<div class='subscribe'>Subscribe &#9662;</div>
+		<div class='logo'><img src='../../../assets/images/awesome-logo.svg'/></div>
+		<div class='social'><img src='../../../assets/images/social-icons.svg'/></div>
+	</div>
+</div>
+
+<pre>align-items: center</pre>
+<div class='header-container'>
+	<div class='header' style="align-items: center;">
+		<div class='subscribe'>Subscribe &#9662;</div>
+		<div class='logo'><img src='../../../assets/images/awesome-logo.svg'/></div>
+		<div class='social'><img src='../../../assets/images/social-icons.svg'/></div>
+	</div>
+</div>
+
+<pre>align-items: flex-end</pre>
+<div class='header-container'>
+	<div class='header' style="align-items: flex-end;">
+		<div class='subscribe'>Subscribe &#9662;</div>
+		<div class='logo'><img src='../../../assets/images/awesome-logo.svg'/></div>
+		<div class='social'><img src='../../../assets/images/social-icons.svg'/></div>
+	</div>
+</div>
+
+<pre>align-items: stretch</pre>
+<p>stretches the <b>box</b> of each item vertically</p>
+<p>useful for having full height columns even when content is different</p>
+<div class='header-container'>
+	<div class='header' style="align-items: stretch;">
+		<div class='subscribe'>Subscribe &#9662;</div>
+		<div class='logo'><img src='../../../assets/images/awesome-logo.svg'/></div>
+		<div class='social'><img src='../../../assets/images/social-icons.svg'/></div>
+	</div>
+</div>
+
+<pre>align-items: baseline</pre>
+<p>aligns the items to the baseline level only</p>
+<div class='header-container'>
+	<div class='header' style="align-items: baseline;">
+		<div class='subscribe'>Subscribe &#9662;</div>
+		<div class='logo'><img src='../../../assets/images/awesome-logo.svg'/></div>
+		<div class='social'><img src='../../../assets/images/social-icons.svg'/></div>
+	</div>
+</div>
+
+<h2>Wrapping items: flex-wrap</h2>
+<pre>flex-wrap: wrap</pre>
+<p>flex-wrap makes elements behaves like floated items, except with more control.</p>
+<div class='photo-grid-container'>
+	<div class='photo-grid'>
+		<div class='photo-grid-item first-item'>
+			<img src='../../../assets/images/one.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/two.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/three.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/four.svg'/>
+		</div>
+		<div class='photo-grid-item last-item'>
+			<img src='../../../assets/images/five.svg'/>
+		</div>
+	</div>
+</div>
+
+<h2>Container Direction: flex-direction: row | row-reverse | column | column-reverse</h2>
+<p>This is whether the flow is horizontal or vertical. </p>
+<div class='photo-grid-container'>
+	<div class='photo-grid' style="flex-direction: column; align-items: center">
+		<div class='photo-grid-item first-item'>
+			<img src='../../../assets/images/one.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/two.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/three.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/four.svg'/>
+		</div>
+		<div class='photo-grid-item last-item'>
+			<img src='../../../assets/images/five.svg'/>
+		</div>
+	</div>
+</div>
+<p>Notice how the column is not centered even with justify-content: center</p>
+<p>This is because when flex-direction is row, the direction is flipped side ways too</p>
+<p>So: normal/row, justify content is <--->  </p>
+<p>but when flex-direction: column, justify content is  top-to-bottom</p>
+<p>thus to horizontally center a column, we must align-item: center</p>
+
+<h2>Override Item order: order: (number)</h2>
+<p>So far we changed everything through the container, but this goes on individual flex items</p>
+<p>by default this is 0. </p>
+
+<div class='photo-grid-container'>
+	<div class='photo-grid'>
+		<div class='photo-grid-item first-item' style="order: 1">
+			<img src='../../../assets/images/one.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/two.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/three.svg'/>
+		</div>
+		<div class='photo-grid-item'>
+			<img src='../../../assets/images/four.svg'/>
+		</div>
+		<div class='photo-grid-item last-item' style="order: -1">
+			<img src='../../../assets/images/five.svg'/>
+		</div>
+	</div>
+</div>
+
+<p>Likewise.. we can also:</p>
+<h2>Override Item align: align-self: flex-start | flex-end | center | stretch | baseline</h2>
+<p>to override each item's alignment</p>
+<br>
+<h2>Flex box</h2>
+<pre>display: flex</pre>
+<p>As we know this makes the child items a flex item.</p>
+<pre>flex: (number)</pre>
+<p>this will determine the <b>weight</b> of the width of each item</p>
+<p>All items widths will be divided equally if they all have the same flex number equally.</p>
+<p>Eg. Item with flex 2 will grow twice as fast flex: 1.</p>
+
+<div class='footer'>
+	<div class='footer-item footer-one'>1</div>
+	<div class='footer-item footer-two'>1</div>
+	<div class='footer-item footer-three'>1</div>
+</div>
+
+<div class='footer'>
+	<div class='footer-item footer-one' style="flex: 2">2</div>
+	<div class='footer-item footer-two'>1</div>
+	<div class='footer-item footer-three'>1</div>
+</div>
+
+<p>Recall: Justify-content -- will change the space <b>around</b></p>
+<p>Flex on an item will change the content width itself</p>
+
+<h3>Flex width with fixed width</h3>
+<p>Default is flex of an item is 'flex: initial'. And needs an explicit width</p>
+<p>This can be combined with a flex box which can shrink/grow as needed</p>
+<div class='footer'>
+	<div class='footer-item footer-one' style="flex: initial; width: 300px;">Fixed</div>
+	<div class='footer-item footer-two' style="flex: 1">Flex</div>
+	<div class='footer-item footer-three' style="flex: initial; width: 300px;">Fixed</div>
+</div>
+
+<h3>Auto margins and Flex</h3>
+
+<div class='menu-container'>
+	<div class='menu' style="justify-content: space-between">
+		<div class='date'>Aug 14, 2016</div>
+		<div class='signup'>Sign Up</div>
+		<div class='login2'>Login</div>
+	</div>
+</div>
+
+<p>Above --justify-content: space-between on menu</p>
+vs
+<p>Below -- margin: auto in the middle item.</p>
+
+<div class='menu-container'>
+	<div class='menu'>
+		<div class='date'>Aug 14, 2016</div>
+		<div class='signup' style="margin: auto">Sign Up</div>
+		<div class='login2'>Login</div>
+	</div>
+</div>
+<p>margin: auto. auto margins absorb <b>all</b> extra space in a flex container, so here, 'signup' get all the margins </p>
