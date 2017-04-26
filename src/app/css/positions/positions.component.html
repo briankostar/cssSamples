@@ -15,7 +15,7 @@
 </div>
 
 <div class='container'>
-	<div class='example absolute'>
+	<div class='example absolute' style="position: relative;">
 		<div class='item'><img src='../../../assets/images/static.svg' /></div>
 		<div class='item item-absolute'><img src='../../../assets/images/absolute.svg' /></div>
 		<div class='item'><img src='../../../assets/images/static.svg' /></div>
@@ -32,4 +32,12 @@
 </div>
 
 <h2>Absolute</h2>
+<p>Absolute offsets from the nearest parent with relative position till window</p>
+<p>bottom: 0 on window will vary as window height changes</p>
+<p>Absolute position removes the element from the flow as if it doesnt exist.</p>
+<p>Absolute position is more useful when paired with relative position.</p>
 
+<h2>Fixed</h2>
+<p>Fixed is similar to absolute where element is removed from normal flow but fixed is always relative to window</p>
+<p><b>Key difference</b> is that fixed <b>doesnt scroll with the rest of the page</b></p>
+<p>Mainly good for top navs that always stay.</p>
