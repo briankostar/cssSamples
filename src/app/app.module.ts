@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { CssModule } from './css/css.module';
-import { ConceptsModule } from './concepts/concepts.module';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+
+import { CssModule } from './css/css.module';
+import { ConceptsModule } from './concepts/concepts.module';
+import { ComponentsModule } from "./components/components.module";
 
 const Router = RouterModule.forRoot([{ path: '', component: HomeComponent}], {useHash: true});
 
@@ -23,7 +24,8 @@ const Router = RouterModule.forRoot([{ path: '', component: HomeComponent}], {us
         HttpModule,
         Router,
         ConceptsModule,
-        CssModule
+        CssModule,
+		ComponentsModule
     ],
     providers   :[],
     bootstrap   :[ AppComponent ]
